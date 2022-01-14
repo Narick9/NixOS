@@ -1,2 +1,4 @@
-./art/
-# It's too large
+#./art/
+#### It's too large
+####   Actually, if you want git to completely ingore this directory,
+####     place it to ./.git/info/exclude

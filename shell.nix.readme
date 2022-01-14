@@ -1,0 +1,5 @@
+* IPython starts every time because of packages.nix.
+  shell.nix just sets shell with python packages.
+* nix-env (launched in packages.nix) read settings in given `[path]`.
+  If `[path]` is not given, it reads shell.nix or default.nix
+  (****actually it once while doesn't)

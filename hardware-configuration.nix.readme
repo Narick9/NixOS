@@ -1,0 +1,3 @@
+* this file contains hardware config. `nixos-generate-config` can generate
+    automatically, thus you don't need to make it by yourself
+* `nixos-generate-config` overrides this file

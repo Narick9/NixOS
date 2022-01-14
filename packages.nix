@@ -14,6 +14,7 @@
       zip
       unzip
       lm_sensors
+      ntfs3g
   
       dotnet-sdk
       git

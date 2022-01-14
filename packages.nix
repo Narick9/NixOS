@@ -14,6 +14,7 @@
       zip
       unzip
       lm_sensors
+      exfat
       ntfs3g
   
       dotnet-sdk

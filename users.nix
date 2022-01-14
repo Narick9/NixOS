@@ -12,8 +12,10 @@
       isNormalUser = true;
       extraGroups = [ "wheel" ];
       home = "/home/art";
-      # # { home = ".."; } - actually it's unnecessary
-      # uid = 556;
+      #### { home = ".."; } - actually it's unnecessary
+      uid = 999;
+      #### uid = ... --- ****I've changed it to 999 once, but I was still 999.
+      ####   Maybe it works only while creating new user
     };
   #users.mutableUsers = true;
   #### users.mutableUsers - allow to change users' options outside this config

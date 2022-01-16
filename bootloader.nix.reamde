@@ -1,0 +1,9 @@
+* 2022_01jan_16:
+    If you want to change a nixos generation entry name, so just modificate
+    `/boot/loader/loader.conf`. It doesn't change name of this generation
+    completely deep, but it's a fast way
+
+        If you yet want to do it all the way deep, so change:
+        > `/nix/var/nix/profiles/system-profiles/` files
+        > `/boot/loader/loader.conf` file
+        > `/boot/loader/entries/` files

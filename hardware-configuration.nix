@@ -8,23 +8,31 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/53e56248-89e8-4cdf-a392-fbb5af230c4c";
+    { device = "/dev/disk/by-uuid/fb33e363-74f5-467f-aff9-67d39a8c62d0";
       fsType = "xfs";
     };
 
+  fileSystems."/nix/store" =
+    { device = "/nix/store";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/2E81-0F15";
+    { device = "/dev/disk/by-uuid/70B3-CC18";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/b5e2c84c-744a-4dca-9a16-b9034b2f1245"; }
+    [ { device = "/dev/disk/by-uuid/ffdbdb86-05f7-4242-94e5-891e47c9166a"; }
     ];
 
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

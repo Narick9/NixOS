@@ -16,6 +16,9 @@
       lm_sensors
       exfat
       ntfs3g
+      pciutils
+      usbutils
+      bootiso
   
       dotnet-sdk
       git

@@ -16,6 +16,7 @@
       ./users.nix
       ./filesystems.nix
       ./services.nix
+      ./printing.nix
     ];
 
 

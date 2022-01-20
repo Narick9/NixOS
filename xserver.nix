@@ -19,8 +19,39 @@
   #services.xserver.videoDrivers = [ "mesa" ];
   # ..videoDriver - you can set desired video driver
 
+  
+  #services.xserver.displayManager.startx.enable = true;
+  #### startx --- you need manually to write ~/.xinitrc
+  #
+  #services.xserver.displayManager.sddm.enable = true;
+  #services.xserver.displayManager.sddm.autoLogin.user = "papa";
+  #services.xserver.displayManager.sddm.autoLogin.enable = true;
+  #### sddm --- it on papa's computer doesn't work (single underscore
+  ####   at left up corner)
+  #
+  #services.xserver.displayManager.autoLogin.enable = true;
+  #services.xserver.displayManager.autoLogin.user = "papa";
+  #services.xserver.displayManager.defaultSession = "gnome";
+  #### autoLogin --- it doesn't work on papa's pc (nothing happens)
+  #
+  #services.xserver.displayManager.lightdm.enable = false;
+  #### ... = false --- if lightdm isn't false, so it's true
+  services.xserver.displayManager.lightdm.autoLogin.timeout = 5;
+  #### ...autoLogin.timeout... - on old versions of LightDM there was a bug,
+  ####  if this option is set to 0, so autologin doesn't work
+  ####
+  ####      At 2022_01jan_19 on NixOS 21.11 with 0 setted autologin didn't
+  ####        worked
+  ####
+  #
+  #services.xserver.displayManager.gdm.enable = true;
+  #### gdm --- it doesn't work on papa's computer (computer starts with tty)
+  #
+  #
   services.xserver.desktopManager.gnome.enable = true;
   #services.xserver.desktopManager.gnome3.enable = true;
+  #
+  #services.xserver.desktopManager.mate.enable = true;
   #         # gnome3 - doesn't work
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.displayManager.gdm.wayland = false;

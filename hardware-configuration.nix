@@ -8,31 +8,19 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ata_piix" "usbhid" "usb_storage" "floppy" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/fb33e363-74f5-467f-aff9-67d39a8c62d0";
+    { device = "/dev/disk/by-uuid/00f017e0-1784-41b0-9ec6-da6bf7e13ece";
       fsType = "xfs";
     };
 
-  fileSystems."/nix/store" =
-    { device = "/nix/store";
-      fsType = "none";
-      options = [ "bind" ];
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/70B3-CC18";
-      fsType = "vfat";
-    };
-
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ffdbdb86-05f7-4242-94e5-891e47c9166a"; }
+    [ { device = "/dev/disk/by-uuid/08d0957c-88d2-45bc-aa1e-461c8c0f21e8"; }
     ];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

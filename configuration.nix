@@ -29,6 +29,8 @@
   time.timeZone = "Europe/Moscow";
   #  # ...timeZone --- Set your time zone.
   #
+  i18n.defaultLocale = "ru_RU.UTF-8";
+  #
   networking.useDHCP = false;
   #  # ...useDHCP --- The global useDHCP flag is deprecated, therefore explicitly set to
   #  #   false here.

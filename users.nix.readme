@@ -1,0 +1,17 @@
+#
+# creation date 2022_01jan_20
+# last change   2022_01jan_20
+# author        artur
+#
+
+* To completely change user, you need to modify:
+*       > ./user.nix:
+*             users.users.<USER>
+*       > ./after-install.sh
+*             sudo chown -R <USER> /etc/nixos/
+*       > ./configuration.nix
+*             networking.hostname = "nixos-<USER>";
+*       > ./filesystems.nix
+*             fileSystems."/run/media/<USER>/...
+*       > ./xserver.nix
+*             services.xserver...autoLogin.user = "<USER>"

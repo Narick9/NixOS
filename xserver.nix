@@ -46,6 +46,8 @@
   #
   #services.xserver.displayManager.gdm.enable = true;
   #### gdm --- it doesn't work on papa's computer (computer starts with tty)
+  ####       ****maybe it would work without ...autoLogin enabled
+  ####           (on papa's notebook it worked without autoLogin)
   #
   #
   services.xserver.desktopManager.gnome.enable = true;

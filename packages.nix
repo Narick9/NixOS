@@ -18,7 +18,7 @@
       ntfs3g
       pciutils
       usbutils
-      bootiso
+      #bootiso
   
       dotnet-sdk
       git
@@ -47,6 +47,8 @@
       zoom-us
       anydesk
       gnome.gnome-notes
+      brave
+      whatsapp-for-linux
   
       unciv
   
@@ -145,4 +147,17 @@
     '';
 
 
+  programs.chromium =
+    {
+      extensions =
+        [
+          "aapbdbdomjkkjkaonfhkkikfgjllcleb"
+          #### google translate
+        ];
+      
+      
+      
+      
+    };
+  #### ...chromium... --- doesn't work with Brave browser
 }

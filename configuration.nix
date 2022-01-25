@@ -29,7 +29,7 @@
   time.timeZone = "Europe/Moscow";
   #  # ...timeZone --- Set your time zone.
   #
-  i18n.defaultLocale = "ru_RU.UTF-8";
+  #i18n.defaultLocale = "ru_RU.UTF-8";
   #
   networking.useDHCP = false;
   #  # ...useDHCP --- The global useDHCP flag is deprecated, therefore explicitly set to
@@ -58,8 +58,8 @@
   # # Did you read the comment?
 
 
-  environment.variables.EDITOR = "vim";
-  environment.variables.SUDO_EDITOR = "vim";
+  environment.variables.EDITOR = "vi";
+  environment.variables.SUDO_EDITOR = "vi";
   #### $SUDO_EDITOR - man of sudo says that it uses SUDO_EDITOR, VISUAL, EDITOR
   ####   variables (in that order). EDITOR is defined, but for some reason,
   ####   `sudo nixos-rebuild` still opens nano

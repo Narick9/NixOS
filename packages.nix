@@ -19,6 +19,7 @@
       pciutils
       usbutils
       #bootiso
+      acpi
   
       dotnet-sdk
       git

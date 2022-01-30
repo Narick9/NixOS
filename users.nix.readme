@@ -8,7 +8,7 @@
 *       > ./user.nix:
 *             users.users.<USER>
 *       > ./after-install.sh
-*             sudo chown -R <USER> /etc/nixos/
+*             sudo [chown/chmod] -R <USER> /etc/...
 *       > ./configuration.nix
 *             networking.hostname = "nixos-<USER>";
 *       > ./filesystems.nix

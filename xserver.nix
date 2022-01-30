@@ -101,19 +101,23 @@
       #  #      It work only with Xorg server. If
       #  #        you are on wayland, you sh should
       #  #        use dconf-editor (https://connectiv.wordpress.com/2020/04/28/logitech-marble-mouse-scroll-on-fedora/)
-      #scrollMehod = "edge";
-      #  # "edge" --- it's for touchpad
       scrollMethod = "button";
       scrollButton = 9;
       #  # "button" --- it's for trackball
       #  # ****doesn't work with GNOME 4 for some reason,
       #  #     so just use gnome.dconf-editor
-      accelSpeed = "1.2";
+      accelSpeed = "1";
       #  # "1" --- it should be in range [-1; 1] or you
       #  #   won't get affect
       #  #   ****is it scroll speed?
 
     };
+
+  #services.xserver.libinput.mouse.touchpad =
+  #  {
+  #    scrollMethod = "edge";
+  #    ##	"edge" --- it's for touchpad
+  #  }
 
 
   services.xserver.xrandrHeads =

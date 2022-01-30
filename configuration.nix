@@ -22,27 +22,39 @@
 
   networking.hostName = "nixos-artur";
   #  # ...hostName --- Define your hostname.
-  #networking.wireless.enable = true;
+  networking.wireless.enable = true;
   #  # ...wireless... - Enables wireless support via wpa_supplicant.
   #  #   ****wpa_cli still doesn't work. Just use GNOME that cover it
   #
-  time.timeZone = "Europe/Moscow";
-  #  # ...timeZone --- Set your time zone.
-  #
-  #i18n.defaultLocale = "ru_RU.UTF-8";
-  #
   networking.useDHCP = false;
-  #  # ...useDHCP --- The global useDHCP flag is deprecated, therefore explicitly set to
-  #  #   false here.
-  #  #   Per-interface useDHCP will be mandatory in the future, so this generated config
+  #  # ...useDHCP --- The global useDHCP flag is deprecated, therefore
+  #  #   explicitly set to false here. Per-interface useDHCP will be mandatory
+  #  #   in the future, so this generated config
   #  #   replicates the default behaviour.
   #networking.interfaces.enp3s25.useDHCP = true;
   #  # ...enp3s0... - you don't have it on your notebook
 
 
-  # Enable sound.
+  time.timeZone = "Europe/Moscow";
+  #  # ...timeZone --- Set your time zone.
+  #
+  #i18n.defaultLocale = "ru_RU.UTF-8";
+  #
+
+
   sound.enable = true;
+  ##	Enable sound.
   hardware.pulseaudio.enable = true;
+  #
+  hardware.bluetooth.enable = true;
+  ##	Enable bluetooth
+  hardware.bluetooth.settings =
+    {
+      General =
+        {
+          Enable = "Source,Sink,Media,Socket";
+        };
+    };
 
 
   # List services that you want to enable:

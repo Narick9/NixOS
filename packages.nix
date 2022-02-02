@@ -54,6 +54,10 @@
       unciv
   
       liberation_ttf_v1
+      #### liveration_... --- it provides three sets:
+      ####   > Sans - it's like Arial, Albany, Helvetica, ...
+      ####   > Serif - it's like Times New Roman, Thorndale, Nimbus Roman, ...
+      ####   > Mono - it's like Courier New, Cumberland, Courier, ...
   
       #if config.services.xserver.enable then
       #  # if .. - it doesn't work here

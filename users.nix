@@ -10,7 +10,9 @@
   users.users.art =
     {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [ "wheel" "sound" "networkmanager" "pulse" "audio" ];
+      #### "audio" --- this group allows the user have access to pulseaudio
+      ####   server
       home = "/home/art";
       #### { home = ".."; } - actually it's unnecessary
       uid = 999;

@@ -31,12 +31,12 @@
   #
   #services.xserver.displayManager.autoLogin.enable = true;
   #services.xserver.displayManager.autoLogin.user = "papa";
-  #services.xserver.displayManager.defaultSession = "gnome";
+  services.xserver.displayManager.defaultSession = "lxqt";
   #### autoLogin --- it doesn't work on papa's pc (nothing happens)
   #
   #services.xserver.displayManager.lightdm.enable = false;
   #### ... = false --- if lightdm isn't false, so it's true
-  services.xserver.displayManager.lightdm.autoLogin.timeout = 5;
+  #services.xserver.displayManager.lightdm.autoLogin.timeout = 5;
   #### ...autoLogin.timeout... - on old versions of LightDM there was a bug,
   ####  if this option is set to 0, so autologin doesn't work
   ####
@@ -71,7 +71,7 @@
   #services.xserver.desktopManager.lumina.enable = true;
   #  # ...lumina... --- it doesn't have its own wifi manager
   #
-  #services.xserver.desktopManager.lxqt.enable = true;
+  services.xserver.desktopManager.lxqt.enable = true;
   #  # ...lxqt... --- it doesn't have its own wifi manager
   
 

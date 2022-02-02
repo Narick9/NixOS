@@ -17,22 +17,8 @@
       ./filesystems.nix
       ./services.nix
       ./printing.nix
+      ./networking.nix
     ];
-
-
-  networking.hostName = "nixos-artur";
-  #  # ...hostName --- Define your hostname.
-  networking.wireless.enable = true;
-  #  # ...wireless... - Enables wireless support via wpa_supplicant.
-  #  #   ****wpa_cli still doesn't work. Just use GNOME that cover it
-  #
-  networking.useDHCP = false;
-  #  # ...useDHCP --- The global useDHCP flag is deprecated, therefore
-  #  #   explicitly set to false here. Per-interface useDHCP will be mandatory
-  #  #   in the future, so this generated config
-  #  #   replicates the default behaviour.
-  #networking.interfaces.enp3s25.useDHCP = true;
-  #  # ...enp3s0... - you don't have it on your notebook
 
 
   time.timeZone = "Europe/Moscow";
@@ -44,7 +30,19 @@
 
   sound.enable = true;
   ##	Enable sound.
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio =
+    {
+      enable = true;
+	  extraModules = [ pkgs.pulseaudio-modules-bt ];
+	  package = pkgs.pulseaudioFull;
+	  extraConfig =
+	    "
+		  load-module module-switch-on-connect
+		";
+        #### "..." --- it enables switching to bluetooth device immidiatly
+		####   after its connecting
+    };
+  #
   #
   hardware.bluetooth.enable = true;
   ##	Enable bluetooth

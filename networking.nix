@@ -5,7 +5,7 @@
 {
 	networking =
 	{
-		hostName = "nixos-artur";
+		hostName = "nixos-papa";
 		#### ...hostName --- Define your hostname.
 		networkmanager =
 		####...networkmanager... --- Some DEs (e.g. GNOME) requires and uses

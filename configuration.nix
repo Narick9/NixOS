@@ -16,7 +16,7 @@
       ./users.nix
       ./filesystems.nix
       ./services.nix
-      ./printing.nix
+      ./printing-scanning.nix
       ./networking.nix
     ];
 
@@ -53,6 +53,8 @@
           Enable = "Source,Sink,Media,Socket";
         };
     };
+  #
+  #
 
 
   # List services that you want to enable:

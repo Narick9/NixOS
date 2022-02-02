@@ -1,6 +1,6 @@
 #
 # creation date 2022_01jan_20
-# last change   2022_01jan_20
+# last change   2022_02feb_02
 # author        artur
 #
 
@@ -9,9 +9,9 @@
 *             users.users.<USER>
 *       > ./after-install.sh
 *             sudo [chown/chmod] -R <USER> /etc/...
-*       > ./configuration.nix
+*       > ./networking.nix
 *             networking.hostname = "nixos-<USER>";
 *       > ./filesystems.nix
 *             fileSystems."/run/media/<USER>/...
 *       > ./xserver.nix
-*             services.xserver...autoLogin.user = "<USER>"
+*             services.xserver.[sddm].autoLogin.user = "<USER>"

@@ -31,7 +31,7 @@
   #
   #services.xserver.displayManager.autoLogin.enable = true;
   #services.xserver.displayManager.autoLogin.user = "papa";
-  services.xserver.displayManager.defaultSession = "lxqt";
+  services.xserver.displayManager.defaultSession = "gnome";
   #### autoLogin --- it doesn't work on papa's pc (nothing happens)
   #
   #services.xserver.displayManager.lightdm.enable = false;

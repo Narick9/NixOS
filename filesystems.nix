@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  fileSystems."/run/media/papa/BACKUPS_1VO" =
+  fileSystems."/run/media/art/BACKUPS_1VO" =
     #### .../toshiba - it can't be `.../BACKUPS_1VO/` for some reason
     {
       device = "/dev/disk/by-label/BACKUPS_1VO";
@@ -11,7 +11,7 @@
       ####   something without sudo
       #### "x-systemd.device-timeout=..." --- without it you would wait for 90s
     };
-  fileSystems."/run/media/papa/terrobyte" =
+  fileSystems."/run/media/art/terrobyte" =
     {
       device = "/dev/disk/by-uuid/E2F8549EF85472B1";
       fsType = "ntfs-3g";

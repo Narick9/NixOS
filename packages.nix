@@ -8,7 +8,10 @@
 
 	environment.systemPackages = with pkgs;
 		[
-			vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+			vim
+			####vim --- Do not forget to add an editor to edit
+			####	configuration.nix! The Nano editor is also installed by
+			####	default.
 			neofetch
 			tmux
 			zip
@@ -24,6 +27,7 @@
 			binutils
 			####binutils --- it's some binaries manipulating utils (linker, ar,
 			####	assembler, etc.)
+			emacs-nox
 	
 			dotnet-sdk
 			git
@@ -31,7 +35,9 @@
 			wine
 			gcc
 			python39
-			jupyter #jupyter - it's also appeared below (with other python packages)
+			jupyter
+			####jupyter --- it's also appeared below (with other python
+			####	packages)
 			#python39Packages.ipykernel
 			etcher
 	
@@ -63,7 +69,8 @@
 			liberation_ttf_v1
 			#### liveration_... --- it provides three sets:
 			####	 > Sans - it's like Arial, Albany, Helvetica, ...
-			####	 > Serif - it's like Times New Roman, Thorndale, Nimbus Roman, ...
+			####	 > Serif - it's like Times New Roman, Thorndale, Nimbus
+			####	   Roman, ...
 			####	 > Mono - it's like Courier New, Cumberland, Courier, ...
 	
 			#if config.services.xserver.enable then
@@ -127,10 +134,14 @@
 								--packages python39Packages.tkinter \
 								--packages python39Packages.seaborn \
 								--packages python39Packages.ipykernel \
+								--packages python39Packages.scikit-learn \
+								--packages python39Packages.scikit-hep-testdata
 								#--packages python39Packages.
 								#--packages python39Packages.jupyter \
-								# ...jupyter --- if you want to use jupyter under common bash
-								#	 (in other words, without ipython), install it like average
+								# ...jupyter --- if you want to use jupyter
+								#    under common bash
+								#	 (in other words, without ipython),
+								#    install it like average
 								#	 linux package, not like ipython module
 								# Python packages first appeared in shell.nix
 								#	 ****false

@@ -14,7 +14,8 @@
 		#xkpOptions = "eurosign:e, compose:menu, grp"alt_space_toggle";
 		#### I don't know what do these options do
 		xkbOptions = "grp:alt_shift_toggle, ctrl:nocaps, terminate:ctrl_alt_bksp";
-		#### "..." --- with new lines here Xorg doesn't start. Only commas are legitimate (****apparently)
+		#### "..." --- with new lines here Xorg doesn't start. Only commas are
+		####	legitimate (****apparently)
 		#### grp:alt_shift_toggle --- sets layout toggle to Alt+Shift
 		#### ctrl:swapcaps --- swaps Ctrl and Casp lock
 		#### ctrl:nocaps --- sets Caps lock to Ctrl

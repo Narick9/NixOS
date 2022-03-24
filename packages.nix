@@ -135,7 +135,7 @@
 								--packages python39Packages.seaborn \
 								--packages python39Packages.ipykernel \
 								--packages python39Packages.scikit-learn \
-								--packages python39Packages.scikit-hep-testdata
+								#--packages python39Packages.scikit-help-testdata
 								#--packages python39Packages.
 								#--packages python39Packages.jupyter \
 								# ...jupyter --- if you want to use jupyter

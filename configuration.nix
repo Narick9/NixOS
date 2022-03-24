@@ -24,7 +24,12 @@
 	time.timeZone = "Europe/Moscow";
 	#	# ...timeZone --- Set your time zone.
 	#
-	#i18n.defaultLocale = "ru_RU.UTF-8";
+	i18n.defaultLocale = "en_US.UTF-8";
+	####...defaultLocale --- sets LANG variable.
+	####	
+	####		With lxqt it will be overwritten. Along with this file, also
+	####			change ~/.config/lxqt/session.conf
+	####	
 	#
 
 

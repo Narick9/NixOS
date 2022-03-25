@@ -40,6 +40,13 @@
 			####	packages)
 			#python39Packages.ipykernel
 			etcher
+			vscode
+			#### code - it has different name actually
+			#### vscode - yeah, exactly this name
+			vscode-extensions.ms-toolsai.jupyter
+			vscode-extensions.ms-python.python
+			vscode-extensions.ms-dotnettools.csharp
+			vscode-extensions.vscodevim.vim
 	
 			opera
 			vlc
@@ -47,9 +54,6 @@
 			# dconf-editor
 			hardinfo
 			#code
-			vscode
-			#### code - it has different name actually
-			#### vscode - yeah, exactly this name
 			discord
 			libreoffice
 			qbittorrent

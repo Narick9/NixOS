@@ -1,9 +1,17 @@
 { config, pkgs, ... }:
 
 
+let
+	oldpkgs = import <nixos-old> {};
+	newpkgs = import <nixos-unstable> {};
+in
 {
 	nixpkgs.config.allowUnfree = true;
 	nixpkgs.config.allowBroken = true;
+	####...allowUnfree... --- it gives effect only to this certain .nix file
+
+
+	services.flatpak.enable = true;
 
 
 	environment.systemPackages = with pkgs;
@@ -21,47 +29,48 @@
 			ntfs3g
 			pciutils
 			usbutils
-			#bootiso
+			##bootiso
+			####bootiso --- by some reason, nixos-rebuild makes a mistake on it
 			acpi
 			unrar
 			binutils
 			####binutils --- it's some binaries manipulating utils (linker, ar,
 			####	assembler, etc.)
-			emacs-nox
+			##emacs-nox
+			xdotool
+			####xdotool --- util to manipulate of X windows
+			newpkgs.mesa
+			
 	
 			dotnet-sdk
 			git
-			git-lfs
+			##git-lfs
 			wine
 			gcc
 			python39
-			jupyter
+			##jupyter
 			####jupyter --- it's also appeared below (with other python
 			####	packages)
-			#python39Packages.ipykernel
-			etcher
-			vscode
+			##python39Packages.ipykernel
+			##etcher
+			##vscode
 			#### code - it has different name actually
 			#### vscode - yeah, exactly this name
-			vscode-extensions.ms-toolsai.jupyter
-			vscode-extensions.ms-python.python
-			vscode-extensions.ms-dotnettools.csharp
-			vscode-extensions.vscodevim.vim
+			vscode-with-extensions
 	
-			opera
+			##opera
 			vlc
-			steam
-			# dconf-editor
+			##steam
+			##dconf-editor
 			hardinfo
-			#code
 			discord
 			libreoffice
 			qbittorrent
-			teamviewer
+			##teamviewer
 			calibre
 			zoom-us
 			anydesk
-			gnome.gnome-notes
+			##gnome.gnome-notes
 			brave
 			whatsapp-for-linux
 			playerctl
@@ -77,20 +86,21 @@
 			####	   Roman, ...
 			####	 > Mono - it's like Courier New, Cumberland, Courier, ...
 	
-			#if config.services.xserver.enable then
-			#	# if .. - it doesn't work here
+			##if config.services.xserver.enable then
+			##	# if .. - it doesn't work here
 	
-			etcher
-			gnome.dconf-editor
-			gnome.gnome-tweaks
+			##gnome.dconf-editor
+			##gnome.gnome-tweaks
 			#### gnome-tweaks - dconf can do everything that tweaks can.
 			####	 But, for some reason, only gnome-tweaks can list your
 			####	 available gnome themes
 
 			xorg.libxcb
 		];
-	#	# List packages installed in system profile. To search, run:
-	#	# $ nix search wget
+	#	#List packages installed in system profile. To search, run:
+	#	#
+	#	#		$ nix search wget
+	#	#
 
 
 	#if config.services.xserver.enable then
@@ -128,27 +138,31 @@
 			#	# ENCYCLOPEDIA --- all environment variables are defined 
 			#	#	 in configuration.nix
 			
-			nix-shell --run "ipython --ipython-dir=/etc/ipython/ \
-											" \
-								--packages python39Packages.line_profiler \
-								--packages python39Packages.memory_profiler \
-								--packages python39Packages.tensorflow \
-								--packages python39Packages.numpy \
-								--packages python39Packages.pandas \
-								--packages python39Packages.tkinter \
-								--packages python39Packages.seaborn \
-								--packages python39Packages.ipykernel \
-								--packages python39Packages.scikit-learn \
-								#--packages python39Packages.scikit-help-testdata
-								#--packages python39Packages.
-								#--packages python39Packages.jupyter \
-								# ...jupyter --- if you want to use jupyter
-								#    under common bash
-								#	 (in other words, without ipython),
-								#    install it like average
-								#	 linux package, not like ipython module
-								# Python packages first appeared in shell.nix
-								#	 ****false
+			nix-shell --run "ipython --ipython-dir=/etc/ipython/" \
+				--packages python39Packages.line_profiler \
+				--packages python39Packages.memory_profiler \
+				--packages python39Packages.tensorflow \
+				--packages python39Packages.numpy \
+				--packages python39Packages.pandas \
+				--packages python39Packages.tkinter \
+				--packages python39Packages.seaborn \
+				--packages python39Packages.ipykernel \
+				--packages python39Packages.scikit-learn \
+				--packages vscode-extensions.ms-toolsai.jupyter \
+				--packages vscode-extensions.ms-python.python \
+				##--packages vscode-extensions.ms-dotnettools.csharp \
+				##--packages vscode-extensions.vscodevim.vim
+				####--packages python39Packages.scikit-help-testdata
+				####--packages python39Packages.
+				####--packages vscode-extensions.vscodevim.vim
+				####--packages python39Packages.jupyter \
+				#### ...jupyter --- if you want to use jupyter
+				####    under common bash
+				####	 (in other words, without ipython),
+				####    install it like average
+				####	 linux package, not like ipython module
+				#### Python packages first appeared in shell.nix
+				####	 ****false
 		'';
 
 
@@ -158,9 +172,9 @@ c.TerminalInteractiveShell.editing_mode = 'vi'
 		'';
 	environment.etc."ipython/profile_default/startup/00-variables.py".text =
 		''
-			#import os
-			#import numpy as np
-			#import pandas as pd
+			##import os
+			##import numpy as np
+			##import pandas as pd
 			#### numpy, pandas --- importing them is too long
 			####	 (****updated: it seems that no. ipython is by himself
 			####	 		heavy enough to take 2-3 seconds)

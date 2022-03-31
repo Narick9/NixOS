@@ -1,5 +1,10 @@
 { config, ... }:
 
+
+let
+	oldpkgs = import <nixos-old> {};
+	newpkgs = import <nixos-unstable> {};
+in
 {
 	# Configure keymap in X11
 	services.xserver =
@@ -23,7 +28,7 @@
 	};
 
 
-	#services.xserver.videoDrivers = [ "mesa" ];
+	services.xserver.videoDrivers = [ "mesa" ];
 	# ..videoDriver - you can set desired video driver
 
 	
@@ -83,9 +88,15 @@
 	
 
 
+	hardware.opengl.driSupport = true;
+	#				# ..driSupport = true; - enabling Vulcan
 	hardware.opengl.driSupport32Bit = true;
-	#				 # ..dirSupport32Bit = true; - enabling OpenGL for 32 programs
-	#				 #	 (for fine, for example Wine)
+	#				# ..driSupport32Bit = true; - enabling OpenGL for 32
+	#				#	 programs (for fine, for example Wine)
+	##hardware.opengl.package = oldpkgs.mesa.drivers;
+	##hardware.opengl.package32 = oldpkgs.pkgsi686Linux.mesa.drivers;
+	#	#newpkgs.mesa --- by some reason, you could roll back to oldpkgs.mesa
+	#	#	driver (20.1.**), but could not move to newpkgs.mesa (21.3.**)
 
 
 	services.xserver.libinput.enable = true;
@@ -135,18 +146,17 @@
 				primary = false;
 				monitorConfig =
 					''
-						Option "Enable" "false"
+						Option "Enable" "true"
 						#### Option "Enable" --- for some reason it doesn't work
 					'';
 			}
 			####"ExternalMonitor"
-			{
-				output = "DP-1";
-				primary = true;
-				####monitorConfig =
-				####	''
-				####		D
-				####	'';
-			}
+			##{
+			##	monitorConfig =
+			##		''
+			##			Option "Enable" "false"
+			##			#### Option "Enable" --- for some reason it doesn't work
+			##		'';
+			##}
 		];
 }

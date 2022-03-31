@@ -12,12 +12,15 @@
 
 			./bootloader.nix
 			./xserver.nix
+			./xserver_xdg.nix
 			./packages.nix
 			./users.nix
 			./filesystems.nix
 			./services.nix
 			./printing-scanning.nix
 			./networking.nix
+
+			<home-manager/nixos>
 		];
 
 

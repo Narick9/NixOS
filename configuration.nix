@@ -4,8 +4,22 @@
 
 { config, pkgs, ... }:
 
-
+let
+	homeManagerTarball = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-21.11.tar.gz";
+	unstableTarball = builtins.fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+in
 {
+	nixpkgs.config =
+	{
+		packageOverrides = pkgs: {
+			home-manager = import homeManagerTarball {
+				config = config.nixpkgs.config;
+			};
+			unstable = import unstableTarball {
+				config = config.nixpkgs.config;
+			};
+		};
+	};
 	imports =
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
@@ -20,7 +34,7 @@
 			./printing-scanning.nix
 			./networking.nix
 
-			<home-manager/nixos>
+			#<home-manager/nixos>
 		];
 
 

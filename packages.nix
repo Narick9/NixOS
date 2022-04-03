@@ -2,8 +2,8 @@
 
 
 let
-	oldpkgs = import <nixos-old> {};
-	newpkgs = import <nixos-unstable> {};
+	##oldpkgs = import <nixos-old> {};
+	##newpkgs = import <nixos-unstable> {};
 in
 {
 	nixpkgs.config.allowUnfree = true;
@@ -39,7 +39,7 @@ in
 			##emacs-nox
 			xdotool
 			####xdotool --- util to manipulate of X windows
-			newpkgs.mesa
+			##newpkgs.mesa
 			
 	
 			dotnet-sdk

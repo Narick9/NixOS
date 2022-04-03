@@ -93,5 +93,5 @@
 	environment.variables.CURRENT_PROJECT="/media/terrobyte/dev_2021-11nov-21/python/Python_для_сложных_задач_(Дж._Вандер_Плас) (1)/";
 	environment.variables.ENCYCLOPEDIA="/media/terrobyte/dev_2021-08aug-10/c#-2021_08aug_10/Troelsen_yasik-programmirovaniya-csharp-7/MySummary-2021_08aug_10/dotnetCoreVersion-you_created_changelog-work_here/";
 	environment.variables.NIXPKGS_ALLOW_UNFREE = "1";
-	environment.variables.GIT_TOKEN = "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"
+	environment.variables.GIT_TOKEN = "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";
 }

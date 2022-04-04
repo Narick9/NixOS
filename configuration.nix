@@ -33,7 +33,6 @@ in
 			./services.nix
 			./printing-scanning.nix
 			./networking.nix
-			./ssh.nix
 
 			#<home-manager/nixos>
 		];

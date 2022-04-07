@@ -76,6 +76,7 @@ in
 			playerctl
 			####playerctl --- with this great utility you can control
 			####	media with your wished buttons under any DE!
+			nomacs
 	
 			unciv
 	

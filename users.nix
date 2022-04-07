@@ -56,6 +56,7 @@
 					vscode-extensions.ms-python.python
 					vscode-extensions.ms-toolsai.jupyter
 					##unstable.vscode-extensions.vscodevim.vim
+					vscode-extensions.vscodevim.vim
 		 		];
 		 	};
 		};

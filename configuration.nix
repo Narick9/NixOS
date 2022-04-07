@@ -34,7 +34,7 @@ in
 			./printing-scanning.nix
 			./networking.nix
 
-			#<home-manager/nixos>
+			<home-manager/nixos>
 		];
 
 

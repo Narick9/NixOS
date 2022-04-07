@@ -37,27 +37,27 @@
 	####	`useradd` utilite
 
 
-	##home-manager.users.art = { pkgs, ... }: {
-	##	nixpkgs.config.allowUnfree = true;
-	##	nixpkgs.config.allowBroken = true;
-	##	####...allowUnfree... --- it gives effect only to this certain block
-	##	####	
-	##	####	For some reason, even if these lines are placed on top of
-	##	####		./configuration.nix, they don't give effect to this block
-	##	####	
+	home-manager.users.art = { pkgs, ... }: {
+		nixpkgs.config.allowUnfree = true;
+		nixpkgs.config.allowBroken = true;
+		####...allowUnfree... --- it gives effect only to this certain block
+		####	
+		####	For some reason, even if these lines are placed on top of
+		####		./configuration.nix, they don't give effect to this block
+		####	
 
-	##	home.packages = [ pkgs.snake4 ];
-	##	programs =
-	##	{
-	##		vscode = {
-	##			enable = true;
-	##			extensions = with pkgs; [
-	##				vscode-extensions.ms-dotnettools.csharp
-	##				vscode-extensions.ms-python.python
-	##				vscode-extensions.ms-toolsai.jupyter
-	##				unstable.vscode-extensions.vscodevim.vim
-	##	 		];
-	##	 	};
-	##	};
-	##};
+		home.packages = [ pkgs.snake4 ];
+		programs =
+		{
+			vscode = {
+				enable = true;
+				extensions = with pkgs; [
+					vscode-extensions.ms-dotnettools.csharp
+					vscode-extensions.ms-python.python
+					vscode-extensions.ms-toolsai.jupyter
+					##unstable.vscode-extensions.vscodevim.vim
+		 		];
+		 	};
+		};
+	};
 }

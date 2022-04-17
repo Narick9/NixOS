@@ -48,7 +48,7 @@ in
 			wine
 			gcc
 			python39
-			##jupyter
+			jupyter
 			####jupyter --- it's also appeared below (with other python
 			####	packages)
 			##python39Packages.ipykernel
@@ -149,21 +149,23 @@ in
 				--packages python39Packages.seaborn \
 				--packages python39Packages.ipykernel \
 				--packages python39Packages.scikit-learn \
+				##--packages python39Packages.scikit-learn-extra \
+				####...scikit-learn-extra... --- with it ipython gives an
+				####	error
 				--packages vscode-extensions.ms-toolsai.jupyter \
 				--packages vscode-extensions.ms-python.python \
 				##--packages vscode-extensions.ms-dotnettools.csharp \
 				##--packages vscode-extensions.vscodevim.vim
-				####--packages python39Packages.scikit-help-testdata
-				####--packages python39Packages.
-				####--packages vscode-extensions.vscodevim.vim
-				####--packages python39Packages.jupyter \
-				#### ...jupyter --- if you want to use jupyter
-				####    under common bash
-				####	 (in other words, without ipython),
-				####    install it like average
-				####	 linux package, not like ipython module
-				#### Python packages first appeared in shell.nix
-				####	 ****false
+				##--packages python39Packages.scikit-help-testdata
+				##--packages python39Packages.
+				##--packages vscode-extensions.vscodevim.vim
+				##--packages python39Packages.jupyter \
+				####...jupyter --- if you want to use jupyter
+				####	under common bash (in other words, without ipython),
+				####    install it like average linux package, not like
+				####	ipython module
+				####Python packages first appeared in shell.nix
+				####	****false
 		'';
 
 

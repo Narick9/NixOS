@@ -7,7 +7,7 @@ let
     tkinter
     line_profiler
     memory_profiler
-    #jupyter  # defined at packages.nix
+    ##jupyter  # defined at packages.nix
     seaborn
 
     numpy

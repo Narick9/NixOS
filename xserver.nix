@@ -62,7 +62,7 @@ in
 	####					 (on papa's notebook it worked without autoLogin)
 	#
 	#
-	services.xserver.desktopManager.gnome.enable = true;
+	#services.xserver.desktopManager.gnome.enable = true;
 	#services.xserver.desktopManager.gnome3.enable = true;
 	#
 	#services.xserver.desktopManager.mate.enable = true;

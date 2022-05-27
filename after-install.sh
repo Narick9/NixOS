@@ -12,4 +12,7 @@ sudo chown -R art /etc/ipython/
 sudo mkdir /mnt/
 sudo chown art /mnt/
 
-cp -r ./art/ /home/
+##cp -r ./art/ /home/
+#### cp -r ... --- it's deprecated. Now you contain all your home directory configs in github.
+
+passwd art
